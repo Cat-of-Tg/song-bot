@@ -29,7 +29,18 @@ async def start(client, message):
         reply_to_message_id=message.message_id
     )
 
-
+@Client.on_message(filters.command('help') & filters.private)
+async def start(client, message):
+    await caption=Config.HELP_MSG.format(message.from_user.mention),
+         reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('SUPPORT', url=f"https/t.me/teamladZ_BOTHUB")
+                 ]
+          ]
+        ),
+        reply_to_message_id=message.message_id
+    )
 @Client.on_message(filters.command(['song','sg','s','tyra','music']))
 def a(client, message):
     query = ''
